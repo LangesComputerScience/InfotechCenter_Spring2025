@@ -1,6 +1,3 @@
-# Programmer: Mr. Lange
-# Branch: Welcome
-# Date: 1.30.2025
-# Program: BlackWidow 
+print("Welcome Branch - Developer: Mr. Lange")
 
-print("Welcome to InfoTechCenter V1.0")
+print("\n\tWelcome to InfoTechCenter V1.0")
