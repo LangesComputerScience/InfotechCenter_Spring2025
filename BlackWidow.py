@@ -1,55 +1,35 @@
+import random
+from time import sleep
+
 # Print a decorative header
 print("\n*************************************\n")
 print("Weather Branch - Developer: Mr. Lange")
 
-# Import necessary libraries
-import random  # Used to randomly select weather conditions
-from time import sleep  # Imported but not used in the code
+# Dictionary mapping weather conditions to alarm delays and speed limits
+WEATHER_IMPACTS = {
+    "snowing": {"delay": 30, "speed_limit": 55},
+    "blizzard": {"delay": 60, "speed_limit": 45},
+    "icy": {"delay": 90, "speed_limit": 35},
+    "rainy": {"delay": 10, "speed_limit": 65},
+    "windy": {"delay": 5, "speed_limit": 70},
+}
 
-# Function to determine the weather condition
-def weather():
-    # List of possible weather conditions
-    weatherForecastList = ["snowing", "blizzard", "icy", "rainy", "windy", "sunny"]
-    # Randomly select one condition from the list
-    weatherCondition = random.choice(weatherForecastList)
-    return weatherCondition
+def get_weather():
+    """Randomly selects and returns a weather condition."""
+    return random.choice(list(WEATHER_IMPACTS.keys()) + ["sunny"])
 
-# Get the current weather alert
-weatherAlert = weather()
-
-# Function to adjust alarm based on weather conditions
-def vehicleResponseSystem():
-    if weatherAlert == "snowing":
-        print("\nThe National Weather Service has updated your alarm by 30 minutes because"
-              " it is", weatherAlert, "outside.")
+def vehicle_response_system(weather_alert):
+    """Prints alarm delay and speed limit based on weather conditions."""
+    if weather_alert in WEATHER_IMPACTS:
+        impact = WEATHER_IMPACTS[weather_alert]
+        print(f"\nThe National Weather Service has updated your alarm by {impact['delay']} minutes because it is {weather_alert} outside.")
         sleep(1)
-        print("VRS has been engaged only allowing us to drive 55MPH.")
-    elif weatherAlert == "blizzard":
-        print("\nThe National Weather Service has updated your alarm by 60 minutes because"
-              " it is a", weatherAlert, "outside!")
-        sleep(1)
-        print("VRS has been engaged only allowing us to drive 45MPH.")
-    elif weatherAlert == "icy":
-        print("\nThe National Weather Service has updated your alarm by 90 minutes because"
-              " it is", weatherAlert, "outside.")
-        sleep(1)
-        print("VRS has been engaged only allowing us to drive 35MPH.")
-    elif weatherAlert == "rainy":
-        print("\nThe National Weather Service has updated your alarm by 10 minutes because"
-              " it is", weatherAlert, "outside.")
-        sleep(1)
-        print("VRS has been engaged only allowing us to drive 65MPH.")
-    elif weatherAlert == "windy":
-        print("\nThe National Weather Service has updated your alarm by 5 minutes because"
-              " it is", weatherAlert, "outside.")
-        sleep(1)
-        print("VRS has been engaged only allowing us to drive 70MPH.")
+        print(f"VRS has been engaged, only allowing us to drive {impact['speed_limit']}MPH.")
     else:
-        # If the weather is sunny, no alarm adjustment is needed
-        print("\nThe National Weather Service is calling for", weatherAlert,
-              "skies outside.")
+        print(f"\nThe National Weather Service is calling for {weather_alert} skies outside.")
         sleep(1)
         print("VRS has been disengaged, drive safe!")
 
-# Call the function to display the appropriate message
-vehicleResponseSystem()
+# Execute program
+weather_alert = get_weather()
+vehicle_response_system(weather_alert)
