@@ -1,6 +1,6 @@
 # Print a decorative header
 print("\n*************************************\n")
-print("Weather Branch - Developer: Mr. Lange\n")
+print("Weather Branch - Developer: Mr. Lange")
 
 # Import necessary libraries
 import random  # Used to randomly select weather conditions
@@ -22,22 +22,34 @@ def vehicleResponseSystem():
     if weatherAlert == "snowing":
         print("\nThe National Weather Service has updated your alarm by 30 minutes because"
               " it is", weatherAlert, "outside.")
+        sleep(1)
+        print("VRS has been engaged only allowing us to drive 55MPH.")
     elif weatherAlert == "blizzard":
         print("\nThe National Weather Service has updated your alarm by 60 minutes because"
               " it is a", weatherAlert, "outside!")
+        sleep(1)
+        print("VRS has been engaged only allowing us to drive 45MPH.")
     elif weatherAlert == "icy":
         print("\nThe National Weather Service has updated your alarm by 90 minutes because"
               " it is", weatherAlert, "outside.")
+        sleep(1)
+        print("VRS has been engaged only allowing us to drive 35MPH.")
     elif weatherAlert == "rainy":
         print("\nThe National Weather Service has updated your alarm by 10 minutes because"
               " it is", weatherAlert, "outside.")
+        sleep(1)
+        print("VRS has been engaged only allowing us to drive 65MPH.")
     elif weatherAlert == "windy":
         print("\nThe National Weather Service has updated your alarm by 5 minutes because"
               " it is", weatherAlert, "outside.")
+        sleep(1)
+        print("VRS has been engaged only allowing us to drive 70MPH.")
     else:
         # If the weather is sunny, no alarm adjustment is needed
-        print("\nThe National Weather Service is calling for", weatherAlert, 
-              "skies outside, drive safe!")
+        print("\nThe National Weather Service is calling for", weatherAlert,
+              "skies outside.")
+        sleep(1)
+        print("VRS has been disengaged, drive safe!"
 
 # Call the function to display the appropriate message
 vehicleResponseSystem()
