@@ -49,7 +49,7 @@ def vehicleResponseSystem():
         print("\nThe National Weather Service is calling for", weatherAlert,
               "skies outside.")
         sleep(1)
-        print("VRS has been disengaged, drive safe!"
+        print("VRS has been disengaged, drive safe!")
 
 # Call the function to display the appropriate message
 vehicleResponseSystem()
