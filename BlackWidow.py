@@ -1,6 +1,9 @@
 # Import necessary libraries
 import sys  # Provides access to system-specific parameters and functions
 import time  # Allows for time-related functions like delays
+import random
+from time import sleep
+
 
 # ANSI Escape Sequences for text colors
 CYAN = "\033[96m"   # Light Cyan text
@@ -34,11 +37,10 @@ while x != 20:
         print(GREEN + "\n\nOperating System Booted Up - Retina Scanned - Access Granted\n" + RESET)  # Displays success message in green
 
 
-import random
-from time import sleep
+
 
 # Print a decorative header
-print("\n*************************************\n")
+print("*************************************\n")
 print("Weather Branch - Developer: Mr. Lange")
 
 # Dictionary mapping weather conditions to alarm delays and speed limits
